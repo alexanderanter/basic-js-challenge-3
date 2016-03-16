@@ -6,17 +6,15 @@ function Player(playerName, cardHand, totVal) {
     this.totVal = totVal || 0;
 }
 
-Player.prototype.getTotVal = function(cardHand) {
-    var copiedArray = cardHand.slice();
+Player.prototype.updateTotVal = function() {
     var total = 0;
 
-    if (copiedArray.length > 0) {
-        total = copiedArray.reduce(function(a, b) {
-            return a + b;
-        });
+    var copiedArray = this.cardHand.slice();
+    for (var i = 0; i < copiedArray.length; i++) {
+        total += copiedArray[i].value;
     }
 
-    return total;
+    this.totVal = total;
 };
 
 // Exports

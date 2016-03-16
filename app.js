@@ -18,6 +18,7 @@ var Game = require("./src/Game");
 
 var firstGame = new Game();
 firstGame.newGame(1);
+firstGame.newDeal();
 
-console.log(firstGame);
+/*console.log(firstGame);*/
 /*var newGame = new Game();*/
