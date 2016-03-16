@@ -1,13 +1,20 @@
 "use strict";
+function Card(suit, value) {
+    this.suit = suit;
+    this.value = value;
+}
 
 function Cards() {
     this.deck = [];
 }
 
-Cards.prototype.newDeck = function(deck) {
+Cards.prototype.newDeck = function() {
+    var suits = ["h", "s", "c", "d"];
+
     for (var i = 0; i < 4; i++) {
-        for(var j = 0; j <  13; j++) {
-            this.deck.push(j);
+        for (var j = 1; j <  14; j++) {
+            var generatedCard = new Card(suits[i], j);
+            this.deck.push(generatedCard);
         }
     }
 };
@@ -31,5 +38,6 @@ Cards.prototype.shuffle = function() {
 
     return deck;
 };
+
 // Exports
 module.exports = Cards;
